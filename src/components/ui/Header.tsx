@@ -8,7 +8,6 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Map labels to routes
   const tabs = [
     { label: "HOME", href: "/" },
     { label: "PROJEKTE", href: "/fr" },
@@ -17,7 +16,6 @@ export default function Header() {
     { label: "KONTAKT", href: "/ffff" },
   ];
 
-  // Derive active tab from pathname
   const currentTab = tabs.find((tab) => pathname === tab.href)?.href || "/";
 
   const [value, setValue] = useState(currentTab);
@@ -40,10 +38,7 @@ export default function Header() {
       }}
     >
       <div className="flex items-center p-7">
-        {/* Logo aligned left */}
         <img src="/logo.png" alt="Logo" style={{ height: 50, width: "auto" }} />
-
-        {/* Spacer to push tabs to center */}
         <div className="flex-grow flex justify-center">
           <Tabs
             value={value}
@@ -55,7 +50,7 @@ export default function Header() {
     <TabsTrigger
       key={href}
       value={href}
-      className="uppercase px-4 py-2" // Removed text-black here
+      className="uppercase px-4 py-2"
     >
       {label}
     </TabsTrigger>
@@ -64,8 +59,6 @@ export default function Header() {
 
           </Tabs>
         </div>
-
-        {/* Optional: Right side empty or other content */}
         <div style={{ width: 36 }} />
       </div>
     </header>

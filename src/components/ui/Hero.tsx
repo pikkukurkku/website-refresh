@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="w-full bg-[#121212] text-white dark:bg-white dark:text-black text-center py-24 px-6 shadow-md">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Willkommen bei Seitwerk!
+          Willkommen bei Seitwerk
         </h1>
         <p className="text-lg md:text-xl text-gray-300 dark:text-gray-700 mb-8">
           Wir verbinden kreative Ideen mit technischer Exzellenz, um digitale Lösungen für unsere Kunden zu schaffen.
