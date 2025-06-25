@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
-export default function ProjectCard({ title, description, media }: {
+export default function ProjectCard({ title, description, media,  className = "" }: {
     title: string;
     description: string;
     media: {
@@ -11,6 +11,7 @@ export default function ProjectCard({ title, description, media }: {
         src: string;
         poster?: string;
       };
+      className?: string;
   }) {
   return (
     <motion.div
@@ -18,7 +19,7 @@ export default function ProjectCard({ title, description, media }: {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="min-w-[300px] max-w-[90vw] md:min-w-[400px] lg:min-w-[500px] snap-start"
+      className={`min-w-[300px] max-w-[90vw] md:min-w-[400px] lg:min-w-[500px] snap-start ${className}`}
     >
      <Card className="relative w-full aspect-[9/9] overflow-hidden rounded-xs shadow-xl border-0 group">
         {media.type === "image" ? (

@@ -1,6 +1,7 @@
 import Header from "@/components/ui/Header";
 import Hero from "@/components/ui/Hero";
 import Projects from "@/components/ui/Projects";
+import Kunden from "@/components/ui/Kunden"
 
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
   <Header />
   <Hero />
   <Projects />
+  <Kunden />
   </>
 );
 }

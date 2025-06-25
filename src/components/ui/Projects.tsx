@@ -3,7 +3,6 @@
 
 import { useEffect, useState } from "react";
 import  ProjectCard from "./ProjectCard"
-import { motion } from "framer-motion"
 
 const keyIndustries = [
   "Sport",
@@ -24,27 +23,27 @@ const projects = [
     }
   },
   {
-    title: "Innovationen für den Kulturbereich",
-    description: "Digitale Plattformen für moderne Museen",
+    title: "Digitale Spielmacher: Unsere App für den Pokalsieger",
+    description: "VfB Stuttgart",
     media: {
-      type: "image" as const,
-      src: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7"
+      type: "video/mp4" as const,
+      src: "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-vfb-app/vfb-pressemeldung.mp4"
     }
   },
   {
-    title: "Tourismus neu gedacht",
-    description: "Interaktive Erlebnisse für Besucher",
+    title: "Frischer Glanz für den Pierre Boulez Saal",
+    description: "Pierre Boulez Saal",
     media: {
-     type: "image" as const,
-     src: "https://images.unsplash.com/photo-1519821172141-b5d8b1f1f1a4",
+     type: "video/mp4" as const,
+     src: "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-pierre-boulez/pressemeldung-pierre-boulez-saal.mp4",
     }
   },
   {
-    title: "Digitale Mobilitätslösungen",
+    title: "Startseite von TDK Electrinics glänzt mit neuem Design",
     description: "Mit Automobilpartnern in die Zukunft",
     media: {
       type: "image" as const,
-      src: "https://images.unsplash.com/photo-1519821172141-b5d8b1f1f1a4",
+      src: "https://www.seitwerk.de/media/cache/base_image_block/cms/media/artikel/2024-08-tdk-elektronics/detailseite.jpg",
      }
   },
 ]
@@ -61,7 +60,7 @@ export default function Projects() {
   }, [])
 
   return (
-    <section className="w-full px-4 md:px-12 py-16 flex flex-col text-left bg-[#f9f9f9]">
+    <section className="w-full bg-[#2a2a2a] text-white px-4 md:px-12 py-16 flex flex-col text-left gap-14">
       <style jsx>{`
         @keyframes fadeInOut {
           0% {
@@ -83,37 +82,38 @@ export default function Projects() {
         }
       `}</style>
 
-      <h1 className="text-3xl md:text-4xl font-bold mb-4 font-poppins">
-        Agentur für{" "}
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 font-poppins">
+        Wir sind Experte für  {" "}
         <span
           key={keyIndustries[index]}
-          className="inline-block text-teal-600 font-bebas text-4xl md:text-6xl animate-fade-in-out"
+          className="inline-block text-teal-600 font-bebas text-4xl md:text-5xl animate-fade-in-out ml-3"
         >
           {keyIndustries[index]}
         </span>
+   
       </h1>
-      <h2 className="text-lg md:text-xl text-black-300 dark:text-black-700 mb-8">
+      <h1 className="text-xl md:text-xl max-w-[55%] md:max-w-[55%]">Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.</h1>
+  
+      <h2 className="text-lg md:text-lg text-black-300 dark:text-black-700 mb-8">
         Hier sind ein paar unserer Lieblingsprojekte
       </h2>
 
-      <div className="w-full overflow-x-auto hide-scrollbar">
+      <div className="w-full hide-scrollbar">
 
-      <motion.div
-  drag="x"
-  dragConstraints={{ left: -1000, right: 0 }}
-  className="flex gap-6 snap-x snap-mandatory overflow-visible min-w-max px-2 py-4 cursor-grab active:cursor-grabbing"
-  whileTap={{ cursor: "grabbing" }}
+      <div
+  className="flex flex-col gap-30 overflow-visible px-2 py-4 cursor-grab active:cursor-grabbing "
 >
-
-    {projects.map((project, i) => (
+{projects.map((project, i) => (
+    <div key={i} className={i % 2 === 1 ? "self-end w-auto" : "self-start w-auto"}>
       <ProjectCard
-        key={i}
         title={project.title}
         description={project.description}
         media={project.media}
+        className=""
       />
+    </div>
     ))}
-  </motion.div>
+  </div>
 </div>
 
     </section>
