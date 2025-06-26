@@ -1,8 +1,11 @@
-/* "use client"; */
+"use client";
 
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "./tabs";
+
+
+export const headerHeightVar = typeof window !== 'undefined' ? 100 : 0;
 
 export default function Header() {
   const pathname = usePathname();
@@ -70,7 +73,7 @@ export default function Header() {
 
   return (
     <header
-      ref={headerRef}
+      ref={headerRef} style={{ height: '100px' }}
       className={`fixed top-0 left-0 w-full bg-[#1a1a1a] text-white p-4 transition-transform duration-300 ease-in-out z-50 ${
         scrollDirection === "down" ? "translate-y-[-100%]" : "translate-y-0"
       }`}
@@ -101,3 +104,5 @@ export default function Header() {
     </header>
   );
 }
+
+
