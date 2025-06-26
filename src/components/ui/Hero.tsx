@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative w-full min-h-[600px] bg-[#1a1a1a] text-white dark:bg-white dark:text-black text-center py-18 px-6 shadow-md overflow-hidden">
       {/* Background Video */}
       <video
-        src="/Happy_hero_video.mp4"
+        src="/colleagues.mp4"
         autoPlay
         loop
         muted

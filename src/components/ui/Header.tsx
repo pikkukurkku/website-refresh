@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "./tabs";
 
+
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();

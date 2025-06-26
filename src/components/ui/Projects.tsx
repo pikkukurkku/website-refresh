@@ -92,7 +92,7 @@ export default function Projects() {
         </span>
    
       </h1>
-      <h1 className="text-xl md:text-xl max-w-[55%] md:max-w-[55%]">Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.</h1>
+      <h1 className="text-xl md:text-lg max-w-[55%] md:max-w-[55%]">Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.</h1>
   
       <h2 className="text-lg md:text-lg text-black-300 dark:text-black-700 mb-8">
         Hier sind ein paar unserer Lieblingsprojekte
