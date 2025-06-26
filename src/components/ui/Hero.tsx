@@ -1,12 +1,12 @@
-"use client";
+/* "use client"; */
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[600px] bg-[#1a1a1a] text-white dark:bg-white dark:text-black text-center py-18 px-6 shadow-md overflow-hidden">
       {/* Background Video */}
-      <video
+{/*       <video
         src="/colleagues.mp4"
         autoPlay
         loop
@@ -14,7 +14,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
-      />
+      /> */}
       
       {/* Overlay for Better Text Contrast */}
       <div className="absolute inset-0 bg-black/20 dark:bg-white/20" />

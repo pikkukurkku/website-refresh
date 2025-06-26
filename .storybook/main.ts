@@ -3,21 +3,12 @@ import path from "path";
 
 const config: StorybookConfig = {
   stories: [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "../src/stories/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   addons: [
-    "@chromatic-com/storybook",
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-vitest",
-    {
-      name: 'storybook-addon-module-mock',
-      options: {
-        include: ["**/action.*"],
-        exclude: ["**/node_modules/**"],
-      }
-    }
   ],
   framework: {
     name: "@storybook/nextjs-vite",
@@ -28,18 +19,18 @@ const config: StorybookConfig = {
     // Add alias for your mock module
     if (config.resolve?.alias) {
       if (!Array.isArray(config.resolve.alias)) {
-        config.resolve.alias['next/navigation$'] = path.resolve(__dirname, '../__mocks__/next/navigation.ts');
+        config.resolve.alias['next/navigation$'] = path.resolve(__dirname, '../mocks/next/navigation.ts');
       } else {
         config.resolve.alias.push({
           find: 'next/navigation$',
-          replacement: path.resolve(__dirname, '../__mocks__/next/navigation.ts')
+          replacement: path.resolve(__dirname, '../mocks/next/navigation.ts')
         });
       }
     } else {
       config.resolve = {
         alias: [{
           find: 'next/navigation$',
-          replacement: path.resolve(__dirname, '../__mocks__/next/navigation.ts')
+          replacement: path.resolve(__dirname, '../mocks/next/navigation.ts')
         }],
       };
     }

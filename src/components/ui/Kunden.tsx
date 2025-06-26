@@ -86,6 +86,8 @@ export default function Kunden() {
           animation: fadeIn 0.6s ease-out forwards;
         }
       `}</style>
+          <div style={{ height: "100px" }} />
     </section>
+    
   );
 }
