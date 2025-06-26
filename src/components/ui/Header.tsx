@@ -1,20 +1,21 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import React, { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "./tabs";
 
 
 export default function Header() {
-  const router = useRouter();
   const pathname = usePathname();
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const tabs = [
     { label: "HOME", href: "/" },
-    { label: "PROJEKTE", href: "/fr" },
-    { label: "KUNDEN", href: "/ffr" },
-    { label: "WERK&TEAM", href: "/fff" },
-    { label: "KONTAKT", href: "/ffff" },
+    { label: "PROJEKTE", href: "#projects" },
+    { label: "KUNDEN", href: "#kunden" },
+    { label: "WERK&TEAM"},
+    { label: "KONTAKT"},
   ];
 
   const currentTab = tabs.find((tab) => pathname === tab.href)?.href || "/";
@@ -27,8 +28,29 @@ export default function Header() {
 
   function onTabChange(newValue: string) {
     setValue(newValue);
-    router.push(newValue);
+  
+    const id = newValue.replace("#", "");
+    const element = document.getElementById(id);
+    
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY && currentY > 100) {
+        setShowHeader(false); // scroll down -> hide
+      } else {
+        setShowHeader(true); // scroll up -> show
+      }
+      setLastScrollY(currentY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <header

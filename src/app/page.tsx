@@ -9,8 +9,12 @@ export default function HomePage() {
     <>
   <Header />
   <Hero />
+  <section id="projects">
   <Projects />
-  <Kunden />
+  </section>
+  <section id="kunden">
+        <Kunden />
+      </section>
   </>
 );
 }
