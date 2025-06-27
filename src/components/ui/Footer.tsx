@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"; // Using react-icons
 
 interface FooterLink {
   label: string;
@@ -9,9 +9,12 @@ interface FooterLink {
 }
 
 interface FooterSection {
-  title: string;
+  title?: string;
+  imageSrc?: string; // ← new
+  imageAlt?: string; // ← optional alt tag
   links: FooterLink[];
 }
+
 
 interface FooterProps {
   brandName?: string;
@@ -29,44 +32,44 @@ interface FooterProps {
 
 const defaultSections: FooterSection[] = [
   {
-    title: "Product",
+    imageSrc: "/Seitwerk_uffing.png",
+    imageAlt: "Seitwerk Logo",
     links: [
-      { label: "Overview", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "Marketplace", href: "#" },
-      { label: "Features", href: "#" },
+      { label: "Seitwerk GmbH", href: "#" },
+      { label: "Sonnensteinstraße 1", href: "#" },
+      { label: "82449 Uffing am Staffelsee", href: "#" },
     ],
   },
   {
-    title: "Company",
+    imageSrc: "/Radio_Oberland.png",
+    imageAlt: "Radio Oberland Logo",
     links: [
-      { label: "About", href: "#" },
-      { label: "Team", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Help", href: "#" },
-      { label: "Sales", href: "#" },
-      { label: "Advertise", href: "#" },
+      { label: "Radio Oberland", href: "#" },
+      { label: "Obermarkt 15", href: "#" },
+      { label: "82418 Murnau", href: "#" },
       { label: "Privacy", href: "#" },
     ],
   },
 ];
 
+const defaultSocialLinks = {
+  instagram: "https://instagram.com/seitwerk",
+  facebook: "https://facebook.com/seitwerk",
+  twitter: "https://x.com/seitwerk",
+  linkedin: "https://www.linkedin.com/company/seitwerk-gmbh/posts/?feedView=all",
+};
+
 const defaultBottomLinks: FooterLink[] = [
-  { label: "Terms and Conditions", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Impressum", href: "#" },
+  { label: "Datenschutz", href: "#" },
+  { label: "Stellenangebote", href: "#" },
 ];
 
 export default function Footer({
-  brandName = "Shadcnblocks.com",
-  description = "A collection of components for your startup business or side project.",
+  brandName = "SEITWERK",
+  description = "Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.",
   sections = defaultSections,
-  socialLinks = {},
+  socialLinks = defaultSocialLinks,
   copyrightText,
   bottomLinks = defaultBottomLinks,
 }: FooterProps) {
@@ -77,113 +80,95 @@ export default function Footer({
     <footer className="bg-background border-t">
       <div className="container mx-auto px-6 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-5">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-background rounded-sm" />
-              </div>
+              <img src="/logo.png" alt="Logo" className="h-[30px] w-auto rounded-xs" />
               <h3 className="text-xl font-bold">{brandName}</h3>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
-              {description}
-            </p>
-            
+            <p className="text-muted-foreground mb-6 max-w-sm">{description}</p>
+
             {/* Social Links */}
             <div className="flex gap-4">
               {socialLinks.instagram && (
                 <Button variant="outline" size="icon" asChild>
-                  <a 
-                    href={socialLinks.instagram} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-4 w-4" />
+                  <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <FaInstagram className="h-4 w-4" />
                   </a>
                 </Button>
               )}
               {socialLinks.facebook && (
                 <Button variant="outline" size="icon" asChild>
-                  <a 
-                    href={socialLinks.facebook} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="h-4 w-4" />
+                  <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <FaFacebook className="h-4 w-4" />
                   </a>
                 </Button>
               )}
               {socialLinks.twitter && (
                 <Button variant="outline" size="icon" asChild>
-                  <a 
-                    href={socialLinks.twitter} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="h-4 w-4" />
+                  <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="X">
+                    <FaTwitter className="h-4 w-4" />
                   </a>
                 </Button>
               )}
               {socialLinks.linkedin && (
                 <Button variant="outline" size="icon" asChild>
-                  <a 
-                    href={socialLinks.linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-4 w-4" />
+                  <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <FaLinkedin className="h-4 w-4" />
                   </a>
                 </Button>
               )}
             </div>
           </div>
 
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1" />
+
           {/* Footer Sections */}
-          {sections.map((section, index) => (
-            <div key={index}>
-              <h4 className="font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="lg:col-span-6 grid grid-cols-2 gap-8">
+            {sections.map((section, index) => (
+              <div key={index}>
+                {section.imageSrc ? (
+  <img
+    src={section.imageSrc}
+    alt={section.imageAlt || ""}
+    className="h-14 mb-4"
+  />
+) : (
+  <h4 className="font-semibold mb-4">{section.title}</h4>
+)}
+
+<div className="text-muted-foreground text-sm leading-snug">
+  {section.links.map((link, linkIndex) => (
+    <div key={linkIndex}>
+      {link.href && link.href !== "#" ? (
+        <a href={link.href} className="hover:text-foreground transition-colors">
+          {link.label}
+        </a>
+      ) : (
+        <span>{link.label}</span>
+      )}
+    </div>
+  ))}
+</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <Separator className="mb-6" />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            {copyright}
-          </p>
-          
-          {bottomLinks.length > 0 && (
-            <div className="flex gap-6">
-              {bottomLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
+        <div className="flex flex-col md:flex-row md:justify-between items-start gap-4 text-sm text-muted-foreground">
+          <p>{copyright}</p>
+          <div className="flex gap-6">
+            {bottomLinks.map((link, index) => (
+              <a key={index} href={link.href} className="hover:text-foreground transition-colors">
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
