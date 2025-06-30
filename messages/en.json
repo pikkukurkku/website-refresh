@@ -1,0 +1,108 @@
+{
+  "header": {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "customers": "CUSTOMERS",
+    "team": "WORK & TEAM",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "title": "SEITWERK",
+    "description": "We combine creative ideas with technical excellence to create digital solutions for our clients.",
+    "button": {
+      "design": "UX/UI Design",
+      "dev": "Web/App Development",
+      "media": "Multimedia"
+    }
+  },
+  "projects": {
+    "headline": "We are experts in",
+    "industries": [
+      "Sports",
+      "Culture & Leisure",
+      "Tourism",
+      "Automotive",
+      "Healthcare"
+    ],
+    "intro": "Since 2004, Seitwerk has been an owner-managed company offering the entire spectrum of new media under one roof. Our specialists deliver everything from concept to design to implementation. We consult, analyze, design, program, create animations, and produce audio and video sequences in our own studio—and much more.",
+    "subheadline": "Here are a few of our favorite projects",
+    "items": [
+      {
+        "title": "Our new collaboration with FIS",
+        "description": "FIS - International Ski and Snowboard Federation",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de//media/datastore/cms/media/artikel/2024-10-fis/fis-app-kackel-720p.mp4",
+          "poster": "https://www.seitwerk.de/media/cache/imageTablet/cms/media/artikel/2024-10-fis/vorschaubild.jpg"
+        }
+      },
+      {
+        "title": "Digital playmakers: Our app for the cup winner",
+        "description": "VfB Stuttgart",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-vfb-app/vfb-pressemeldung.mp4"
+        }
+      },
+      {
+        "title": "Fresh shine for the Pierre Boulez Hall",
+        "description": "Pierre Boulez Hall",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-pierre-boulez/pressemeldung-pierre-boulez-saal.mp4"
+        }
+      },
+      {
+        "title": "Homepage of TDK Electronics shines with new design",
+        "description": "With automotive partners into the future",
+        "media": {
+          "type": "image",
+          "src": "https://www.seitwerk.de/media/cache/base_image_block/cms/media/artikel/2024-08-tdk-elektronics/detailseite.jpg"
+        }
+      }
+    ]
+  },
+
+  "kunden": {
+    "headline": "Our Clients",
+    "intro": "Since 2004, various companies have benefited from our services: Our clients include some of the largest companies and organizations worldwide. At the same time, we remain open to small and medium-sized enterprises and support communities, clubs, and businesses from our region."
+  },
+  "footer": {
+    "brandName": "SEITWERK",
+    "description": "Since 2004, Seitwerk, as an owner-managed company, has offered the full spectrum of new media under one roof. Our specialists deliver everything from concept to design to implementation from a single source. We advise, analyze, design, program, create animations, produce audio and video sequences in our own studio, and much more.",
+    "sections": [
+      {
+        "imageSrc": "/Seitwerk_uffing.png",
+        "imageAlt": "Seitwerk Logo",
+        "lines": [
+          "Seitwerk GmbH",
+          "Sonnensteinstraße 1",
+          "82449 Uffing am Staffelsee, Germany",
+          "Phone: +49 (0) 8846 - 921 233 - 0",
+          "Email: info@seitwerk.de"
+        ]
+      },
+      {
+        "imageSrc": "/Radio_Oberland.png",
+        "imageAlt": "Radio Oberland Logo",
+        "lines": ["Radio Oberland", "Obermarkt 15", "82418 Murnau, Germany"]
+      }
+    ],
+    "socialLinks": {
+      "instagram": "https://instagram.com/seitwerk",
+      "facebook": "https://facebook.com/seitwerk",
+      "twitter": "https://x.com/seitwerk",
+      "linkedin": "https://www.linkedin.com/company/seitwerk-gmbh/posts/?feedView=all"
+    },
+    "copyrightText": "© {currentYear} SEITWERK. All rights reserved.",
+    "bottomLinks": [
+      { "label": "Imprint", "href": "#" },
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Job Opportunities", "href": "#" }
+    ],
+    "labels": {
+      "email": "Email",
+      "phone": "Phone"
+    }
+  }
+}

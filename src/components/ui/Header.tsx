@@ -1,27 +1,29 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "./tabs";
+import { useTranslations, useLocale } from "next-intl";
 
-
-export const headerHeightVar = typeof window !== 'undefined' ? 100 : 0;
+export const headerHeightVar = typeof window !== "undefined" ? 100 : 0;
 
 export default function Header() {
+  const t = useTranslations("header");
+  const locale = useLocale();
+  const router = useRouter();
   const pathname = usePathname();
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef(null);
 
   const tabs = [
-    { label: "HOME", href: "#home" },
-    { label: "PROJEKTE", href: "#projects" },
-    { label: "KUNDEN", href: "#kunden" },
-    { label: "WERK&TEAM" },
-    { label: "KONTAKT" },
+    { label: t("home"), href: "#home" },
+    { label: t("projects"), href: "#projects" },
+    { label: t("customers"), href: "#kunden" },
+    { label: t("team"), href: "#werkteam" },
+    { label: t("contact"), href: "#footer" },
   ];
 
-  const currentTab = tabs.find((tab) => pathname === tab.href)?.href || "/";
+  const currentTab = tabs.find((tab) => pathname.includes(tab.href))?.href || `/${locale}`;
   const [value, setValue] = useState(currentTab);
 
   useEffect(() => {
@@ -37,9 +39,36 @@ export default function Header() {
     }
   }
 
+  const toggleLanguage = () => {
+    const newLocale = locale === "de" ? "en" : "de";
+    
+    // More robust path handling
+    let newPathname;
+    
+    // Check if pathname starts with a locale
+    if (pathname.startsWith('/de') || pathname.startsWith('/en')) {
+      // Replace the existing locale
+      newPathname = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`);
+    } else {
+      // Add locale to the beginning
+      newPathname = `/${newLocale}${pathname}`;
+    }
+    
+    // Handle root path
+    if (newPathname === `/${newLocale}/`) {
+      newPathname = `/${newLocale}`;
+    }
+
+    console.log('Switching from', locale, 'to', newLocale);
+    console.log('Current pathname:', pathname);
+    console.log('New pathname:', newPathname);
+    
+    router.push(newPathname);
+  };
+
   useEffect(() => {
     let didScroll = false;
-    const delta = 10; // Minimum scroll distance to trigger hide/show
+    const delta = 10;
 
     const handleScroll = () => {
       didScroll = true;
@@ -53,17 +82,18 @@ export default function Header() {
       if (Math.abs(currentY - lastScrollY) <= delta) return;
 
       if (currentY <= 0) {
-        setScrollDirection("up"); // Show at top of page
+        setScrollDirection("up");
       } else if (currentY > lastScrollY) {
-        setScrollDirection("down"); // Scroll down -> hide
+        setScrollDirection("down");
       } else {
-        setScrollDirection("up"); // Scroll up -> show
+        setScrollDirection("up");
       }
+
       setLastScrollY(currentY);
     };
 
     window.addEventListener("scroll", handleScroll);
-    const interval = setInterval(checkScroll, 100); // Debounce scroll checks
+    const interval = setInterval(checkScroll, 100);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -73,7 +103,8 @@ export default function Header() {
 
   return (
     <header
-      ref={headerRef} style={{ height: '100px' }}
+      ref={headerRef}
+      style={{ height: "100px" }}
       className={`fixed top-0 left-0 w-full bg-[#1a1a1a] text-white p-4 transition-transform duration-300 ease-in-out z-50 ${
         scrollDirection === "down" ? "translate-y-[-100%]" : "translate-y-0"
       }`}
@@ -99,10 +130,15 @@ export default function Header() {
             </TabsList>
           </Tabs>
         </div>
-        <div className="w-9" />
+        <button
+  onClick={toggleLanguage}
+  className="ml-4 px-3 py-1.5 rounded-full text-sm font-medium border border-white/20 hover:border-white transition-colors duration-200"
+  aria-label="Toggle language"
+>
+  <span className="text-white">{locale === "en" ? "DE" : "EN"}</span>
+</button>
+
       </div>
     </header>
   );
 }
-
-

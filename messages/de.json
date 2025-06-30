@@ -1,0 +1,107 @@
+{
+  "header": {
+    "home": "HOME",
+    "projects": "PROJEKTE",
+    "customers": "KUNDEN",
+    "team": "WERK&TEAM",
+    "contact": "KONTAKT"
+  },
+  "hero": {
+    "title": "SEITWERK",
+    "description": "Wir verbinden kreative Ideen mit technischer Exzellenz, um digitale Lösungen für unsere Kunden zu schaffen.",
+    "button": {
+      "design": "UX/UI Design",
+      "dev": "Web/App Entwicklung",
+      "media": "Multimedia"
+    }
+  },
+  "projects": {
+    "headline": "Wir sind Experte für",
+    "industries": [
+      "Sport",
+      "Kultur & Freizeit",
+      "Tourismus",
+      "Automobil",
+      "Gesundheit"
+    ],
+    "intro": "Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.",
+    "subheadline": "Hier sind ein paar unserer Lieblingsprojekte",
+    "items": [
+      {
+        "title": "Unsere neue Zusammenarbeit mit der FIS",
+        "description": "FIS - International Ski and Snowboard Federation",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de//media/datastore/cms/media/artikel/2024-10-fis/fis-app-kackel-720p.mp4",
+          "poster": "https://www.seitwerk.de/media/cache/imageTablet/cms/media/artikel/2024-10-fis/vorschaubild.jpg"
+        }
+      },
+      {
+        "title": "Digitale Spielmacher: Unsere App für den Pokalsieger",
+        "description": "VfB Stuttgart",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-vfb-app/vfb-pressemeldung.mp4"
+        }
+      },
+      {
+        "title": "Frischer Glanz für den Pierre Boulez Saal",
+        "description": "Pierre Boulez Saal",
+        "media": {
+          "type": "video/mp4",
+          "src": "https://www.seitwerk.de/media/datastore/cms/media/artikel/2025-05-pierre-boulez/pressemeldung-pierre-boulez-saal.mp4"
+        }
+      },
+      {
+        "title": "Startseite von TDK Electrinics glänzt mit neuem Design",
+        "description": "Mit Automobilpartnern in die Zukunft",
+        "media": {
+          "type": "image",
+          "src": "https://www.seitwerk.de/media/cache/base_image_block/cms/media/artikel/2024-08-tdk-elektronics/detailseite.jpg"
+        }
+      }
+    ]
+  },
+  "kunden": {
+    "headline": "Unsere Kunden",
+    "intro": "Seit 2004 profitieren unterschiedliche Unternehmen von unseren Leistungen: Unsere Kunden gehören zu den größten Unternehmen und Organisationen der Welt. Doch gleichzeitig sind wir offen, für kleine und mittelständige Unternehmen und unterstützen Gemeinden, Vereine und Firmen aus unserer Region."
+  },
+  "footer": {
+    "brandName": "SEITWERK",
+    "description": "Seitwerk bietet seit 2004 als inhabergeführtes Unternehmen das ganze Spektrum der Neuen Medien unter einem Dach. Unsere Spezialisten liefern von der Konzeption über das Design bis zur Realisierung alles aus einer Hand. Wir beraten, analysieren, entwerfen, programmieren, erstellen Animationen, produzieren Ton- und Videosequenzen im eigenen Studio und vieles mehr.",
+    "sections": [
+      {
+        "imageSrc": "/Seitwerk_uffing.png",
+        "imageAlt": "Seitwerk Logo",
+        "lines": [
+          "Seitwerk GmbH",
+          "Sonnensteinstraße 1",
+          "82449 Uffing am Staffelsee",
+          "Telefon: +49 (0) 8846 - 921 233 - 0",
+          "Email: info@seitwerk.de"
+        ]
+      },
+      {
+        "imageSrc": "/Radio_Oberland.png",
+        "imageAlt": "Radio Oberland Logo",
+        "lines": ["Radio Oberland", "Obermarkt 15", "82418 Murnau"]
+      }
+    ],
+    "socialLinks": {
+      "instagram": "https://instagram.com/seitwerk",
+      "facebook": "https://facebook.com/seitwerk",
+      "twitter": "https://x.com/seitwerk",
+      "linkedin": "https://www.linkedin.com/company/seitwerk-gmbh/posts/?feedView=all"
+    },
+    "copyrightText": "© {currentYear} SEITWERK. Alle Rechte vorbehalten.",
+    "bottomLinks": [
+      { "label": "Impressum", "href": "#" },
+      { "label": "Datenschutz", "href": "#" },
+      { "label": "Stellenangebote", "href": "#" }
+    ],
+    "labels": {
+      "email": "Email",
+      "phone": "Telefon"
+    }
+  }
+}
