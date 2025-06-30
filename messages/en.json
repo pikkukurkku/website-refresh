@@ -104,5 +104,19 @@
       "email": "Email",
       "phone": "Phone"
     }
+  },
+  "seitwerkvideo": {
+  "title": "Our Team",
+  "team": {
+    "all": "All",
+    "departments": {
+      "design": "Design",
+      "development": "Development",
+      "management": "Management",
+      "operations": "Operations",
+      "marketing": "Marketing"
+    }
   }
+}
+
 }

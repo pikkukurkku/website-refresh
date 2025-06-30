@@ -4,6 +4,7 @@ import Hero from "@/components/ui/Hero";
 import Projects from "@/components/ui/Projects";
 import Kunden from "@/components/ui/Kunden";
 import Footer from "@/components/ui/Footer";
+import SeitwerkVideo from "@/components/ui/Team";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,9 @@ export default function HomePage() {
       </section>
       <section id="kunden">
         <Kunden />
+      </section>
+      <section id="seitwerkvideo">
+        <SeitwerkVideo />
       </section>
       <section id="footer">
         <Footer />

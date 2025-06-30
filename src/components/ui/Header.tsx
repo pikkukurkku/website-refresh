@@ -19,7 +19,7 @@ export default function Header() {
     { label: t("home"), href: "#home" },
     { label: t("projects"), href: "#projects" },
     { label: t("customers"), href: "#kunden" },
-    { label: t("team"), href: "#werkteam" },
+    { label: t("team"), href: "#seitwerkvideo" },
     { label: t("contact"), href: "#footer" },
   ];
 

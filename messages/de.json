@@ -103,5 +103,18 @@
       "email": "Email",
       "phone": "Telefon"
     }
+  },
+  "seitwerkvideo": {
+    "title": "Unser Team",
+    "team": {
+    "all": "Alle",
+    "departments": {
+      "design": "Design",
+      "development": "Entwicklung",
+      "management": "Management",
+      "operations": "Betrieb",
+      "marketing": "Marketing"
+    }
+  }
   }
 }
